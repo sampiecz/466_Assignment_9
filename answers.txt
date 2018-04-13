@@ -1,0 +1,26 @@
+###########################################################
+# CSCI 466 - Assignment 9 - Spring 2018                   #
+#                                                         #
+# Progammer: Sam Piecz                                    #
+# Z-ID: Z1732715                                          #
+# Section: 3                                              #
+# TA: Rajarshi Sen                                        #
+# Date Due: Apr 06, 2018                                  # 
+# Purpose: SQL transactions & rollbacks                   # 
+###########################################################
+
+Part 1
+---------------
+1.) No question.
+2.) The result is empty because the transaction hasn't finished. The objects are not yet saved.
+3.) No question.
+4.) No question. 
+5.) The select statement returned everything because the transaction was committed.
+
+Part 2
+---------------
+1.) No question
+2.) No question
+3.) No question
+4.) The result of the select statement is the way it is up the values were update? I mean what do you really want me to explain here? The fact that a row was added to a table? That we overwrote some of the rows?
+5.) We rollbacked the table because we issued the rollback command.

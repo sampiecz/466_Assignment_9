@@ -1,1 +1,0 @@
-5.) The select statement returned everything because the transaction was committed.
