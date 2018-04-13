@@ -1,0 +1,14 @@
+MariaDB [(none)]> use z1732715;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1732715]> update movie set name = 'The Graduate' where pk=5;
+Query OK, 1 row affected (0.09 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> update movie set name = 'Dr. StrangeLove' where pk = 6;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> \q

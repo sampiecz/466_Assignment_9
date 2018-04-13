@@ -1,0 +1,67 @@
+MariaDB [(none)]> use z1732715;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1732715]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1732715]> delete from movie where pk = 3;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1732715]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+5 rows in set (0.00 sec)
+
+MariaDB [z1732715]> Update movie set name = 'Iron Man' where pk = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> Update movie set name = 'Con Air' where pk = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('Grease');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1732715]> select * from movie;
++----+----------+
+| pk | name     |
++----+----------+
+|  1 | Das Boot |
+|  2 | Iron Man |
+|  4 | Con Air  |
+|  5 | Shrek    |
+|  6 | StarTrek |
+|  7 | Grease   |
++----+----------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1732715]> # The result of the select statement is the way it is up the values were update? I mean what do you really want me to explain here? The fact that a row was added to a table? That we overwrote some of the rows?
+MariaDB [z1732715]> rollback;
+Query OK, 0 rows affected (0.04 sec)
+
+MariaDB [z1732715]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1732715]> # We rollbacked the table because we issued the rollback command.
+MariaDB [z1732715]> \t 

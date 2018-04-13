@@ -1,0 +1,32 @@
+MariaDB [(none)]> use z1732715;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1732715]> select * from movie
+    -> ;
+Empty set (0.00 sec)
+
+MariaDB [z1732715]> # The result is empty because the transaction hasn't finished. The objects are not yet saved.
+MariaDB [z1732715]> insert into movie(name)
+    -> values('Shrek');
+Query OK, 1 row affected (0.06 sec)
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('StarTrek');
+Query OK, 1 row affected (0.09 sec)
+
+MariaDB [z1732715]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1732715]> \t

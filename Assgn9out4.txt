@@ -1,0 +1,20 @@
+MariaDB [(none)]> use z1732715;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1732715]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1732715]> update movie
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [z1732715]> update movie set name = 'The Red Shoes' where pk=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> update movie set name = 'Shrek 2' where pk=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1732715]> \q

@@ -1,0 +1,46 @@
+MariaDB [(none)]> use z1732715;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1732715]> create table movie(
+    -> pk int auto_increment primary key,
+    -> name char(15));
+Query OK, 0 rows affected (0.25 sec)
+
+MariaDB [z1732715]> start transaction;
+Query OK, 0 rows affected (0.01 sec)
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('Das Boot');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('The Godfather');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('Jaws');
+Query OK, 1 row affected (0.01 sec)
+
+MariaDB [z1732715]> insert into movie (name)
+    -> values('The Black Stallion');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+MariaDB [z1732715]> commit;
+Query OK, 0 rows affected (0.03 sec)
+
+MariaDB [z1732715]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1732715]> \t
